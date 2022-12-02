@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <title>그림 메모 편집기 만들기</title>
+    </head>
+    <style>
+        @import url(main.css);
+    </style>
+    <body> 
+        <div class="tool">
+        <div >
+            <div class = "mycanvas">
+                <canvas onclick="canvasClick(event)" id="maincanvas" width="600" height="400" style="background-color: rgb(255, 255, 255); left: 480px; top: 100px;"></canvas>
+            </div>
+
+
+
+            <div class="toolBox" style=" position: relative; width: 130px; height: 400px; background-color: rgba(101, 177, 14, 0.671);  left: 630px; bottom: 400px;" >
+                <div style = "position: relative; top: 5px; left: 5px;">
+                
+                    <button id = "circle" onclick="circleClick(event)">
+                     <img src="free-icon-circle-outline-60722.png" width="20" height="20">               
+                 </button>
+                
+                 <button id = "square" onclick="squareClick(event)" >
+                     <img src="free-icon-square-outlined-shape-59746.png" width="20" height="20">
+                 </button>
+                
+                 <button id = "triangle" onclick="triangle(event)">
+                    <img src="free-icon-triangle-outline-variant-33854.png" width="20" height="20">
+                </button>
+                </div>
+                <hr>
+                <div  style = "position: relative; left: 5px;">
+                 <button id = "pencil" onclick="pencilClick(event)">
+                     <img src="free-icon-pencil-3298830.png" width="20" height="20">
+                 </button>
+                
+                 <button id = "eraser" onclick="eraserClick(event)">
+                     <img src="free-icon-pencil-eraser-4387741.png" width="20" height="20">
+                 </button>
+
+                 <button id = "text" onclick="textClick(event)">
+                    <img src="text.png" width="20" height="20">
+                </button>
+                 
+                </div>
+                <hr>
+                <div style="position: relative; left: 10px;">
+                 <form >
+                   
+                   폰트   <select id="f">
+                            <option value="1" selected>굴림</option>
+                            <option value="2">바탕</option>
+                            <option value="3">돋음</option>
+                            <option value="4">궁서</option>
+                        </select>
+                    </form>
+
+                </div>
+                <hr>
+
+                <div class="controls__range"> 
+                    <p style="position: relative; left: 50px">크기 </p>
+                <input type="range" id="jsRange"
+                min="0.1" mas="5.0" value="2.5" step="0.1" style="position: relative; top: 3px"/>
+                
+            </div>
+            <hr>
+            <div style = "position: relative; bottom: 5px; left: 20px;">
+                <input id="colorChange" type="color" list="" style="position: relative; top: 5px"> 
+            </div>
+            <hr>
+            <div style="position: relative; left: 45px;">
+               
+                    <div class="button">
+                        <label class="inputImage" for="chooseFile">
+                            <img src="gallery.png" width="40" height="40">
+                           <div class="preview-img">
+                            <input class="preimg" type="file" id="chooseFile" name="chooseFile" accept="image/*" onchange="loadFile(this)" style="display: none;">
+                           </div>
+                            
+                        </label>
+                    </div>
+            </div>
+            <hr>
+            <div style = "position: relative; top: 2px; left: 40px;">
+                <button class="screenshot" id="Crop" onclick="CropImage()" >
+                    자르기
+                </button>
+            </div>
+            <hr>
+            
+                 <div  style = "position: relative; bottom: 5px; left: 25px;">
+                    
+                     <button id = "clear" onclick="clearClick(event)">
+                         전체 지우기
+                     </button>
+                    
+                 </div>
+              
+     
+        </div>
+
+
+
+
+     </div>
+
+        <div style="position: relative; bottom: 370px; left: 200px;"> 
+            <button class="savei" id = "savebtn" style="height: 60px; width: 200px; font-size: larger; background-color: rgb(247, 129, 51); left: 680px; top: 550px;">저장</button>
+        </div>
+
+        </div>
+        <script src="main.js"> </script>
+        
+    </body>
+</html>
